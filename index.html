@@ -99,6 +99,67 @@
               <li class="date_expire" data-month="November" data-day="5" data-year="2015" data-time="11:35" data-content="false">This will expire on 11-5-15 at 11:30</li>
               <li class="date_expire" data-month="November" data-day="5" data-year="2025" data-time="11:35" data-content="false">This will expire on 11-5-25 at 11:30</li>
             </ul>
+
+            <h3><a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h3>
+            <p>You will need to have jquery loaded to make this work.</p>
+
+            <h4><a id="documentation-1" class="anchor" href="#documentation-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1</h4>
+            <p>Create a element and give it the class "date_expire", also set the month, day, and year. You can also set the time, and the content, but these options are optional. When your done it should look like this:</p>
+            <code><div class="date_expire" data-month="April" data-day="3" data-year="2014" data-time="12:00"></div></code>
+
+            <h4><a id="documentation-2" class="anchor" href="#documentation-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2</h4>
+            <p>Then inside of the element you just made, create 2 other elements. One with the class of "hide_af" and the other with a class of "show_af". The one with the class of "show_af" make sure you add "display:none;" to the style. It should look like this when your done.</p>
+            <code>
+              <div class="date_expire" data-month="April" data-day="3" data-year="2014" data-time="12:00">
+                <div class="hide_af">
+                  Content to hide after date.
+                </div>
+                <div class="show_af" style="display:none;">
+                  Content to show after date.
+                </div>
+              </div>
+            </code>
+
+            <h4><a id="documentation-3" class="anchor" href="#documentation-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h4>
+            <p>Below are all options available:</p>
+            <table>
+            <tr>
+            <th>Option Code</th>
+            <th>Status</th>
+            <th>Default</th>
+            <th>Description</th>
+            </tr>
+            <tr>
+            <td>data-month</td>
+            <td>Required</td>
+            <td>null</td>
+            <td>This defines the month you want the block to expire</td>
+            </tr>
+            <tr>
+            <td>data-day</td>
+            <td>Required</td>
+            <td>null</td>
+            <td>This defines the day you want the block to expire</td>
+            </tr>
+            <tr>
+            <td>data-year</td>
+            <td>Required</td>
+            <td>null</td>
+            <td>This defines the year you want the block to expire</td>
+            </tr>
+            <tr>
+            <td>data-time</td>
+            <td>Optional</td>
+            <td>00:00:00:00</td>
+            <td>This defines the time you want the block to expire</td>
+            </tr>
+            <tr>
+            <td>data-content</td>
+            <td>Optional</td>
+            <td>True</td>
+            <td>This switches between hiding the whole block, or showing the content after. By default it shows the content after. Change it to false, and it will hide the whole block.</td>
+            </tr>
+            </table>
         </section>
 
         <aside id="sidebar">
