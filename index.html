@@ -14,7 +14,7 @@
 	</div>
 </div><br />
 <!-- This will hide on April 13th, 2015 at 10:00:00, I put this one to show that you can have more then one per page. -->
-<div class="date_expire" data-month="4" data-day="13" data-year="2014" data-time="">
+<div class="date_expire" data-month="4" data-day="13" data-year="2014">
 	<div class="hide_af">
 		This Should expire on April 14th, 2014 at 10:00:00
 	</div>
@@ -23,23 +23,52 @@
 	</div>
 </div><br />
 <!-- This will hide on April 15th, 2015 at 00:00:00, Time is not required, but will default to 00:00:00 -->
-<div class="date_expire" data-month="April" data-day="15" data-year="2014">
-	<div class="hide">
+<div class="date_expire" data-month="April" data-day="15" data-year="2015">
+	<div class="hide_af">
 		This Should expire on April 15th, 2015 at 00:00:00
 	</div>
-	<div class="show" style="display:none">
-		Show this after expire date
+	<div class="show_af" style="display:none">
+		Show this after April 15th, 2015 at 00:00:00
 	</div>
 </div><br />
 <!-- This will hide on April 19th, 2025 at 00:00:00, if you dont belive me change your clock to after that date and it will be hidden -->
 <div class="date_expire" data-month="April" data-day="19" data-year="2025">
-	<div class="hide">
+	<div class="hide_af">
 		Hide this after expire date
 	</div>
-	<div class="show" style="display:none">
+	<div class="show_af" style="display:none">
 		Show this after expire date
 	</div>
 </div><br />
+<div class="date_expire" data-month="April" data-day="19" data-year="2025">
+	<div class="hide_af">
+		This has a nested expire.
+		<div class="date_expire" data-month="April" data-day="15" data-year="2015">
+			<div class="hide_af">
+				This Should expire on April 15th, 2015 at 00:00:00
+			</div>
+			<div class="show_af" style="display:none">
+				Show this after April 15th, 2015 at 00:00:00
+			</div>
+		</div>
+	</div>
+	<div class="show_af" style="display:none">
+		Show this after expire date
+		<div class="date_expire" data-month="April" data-day="15" data-year="2015">
+			<div class="hide_af">
+				This Should expire on April 15th, 2015 at 00:00:00
+			</div>
+			<div class="show_af" style="display:none">
+				Show this after April 15th, 2015 at 00:00:00
+			</div>
+		</div>
+	</div>
+	<ul>
+		<li class="date_expire" data-month="April" data-day="15" data-year="2015" data-content="false">This should Not Be here</li>
+		<li class="date_expire" data-month="November" data-day="5" data-year="2015" data-time="11:35" data-content="false">This will expire on 11-5-15 at 11:30</li>
+		<li class="date_expire" data-month="November" data-day="5" data-year="2025" data-time="11:35" data-content="false">This will expire on 11-5-25 at 11:30</li>
+	</ul>
+</div>
 <script src="jquery/jquery.min.js"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
 <script type="text/javascript">
@@ -50,6 +79,7 @@
 
 			//DO NOT EDIT BELLOW
 			var current = new Date();
+			var expireContent = $(this).data('content');
 			var expiryDateMonth = $(this).data('month'); 
 			var expiryDateDay = $(this).data('day');
 			var expiryDateYear = $(this).data('year');
@@ -60,9 +90,14 @@
 			var expiryDate = new Date(expiryDateMonth + " " +  expiryDateDay + " " +  "," + expiryDateYear + " " + expiryDateTime);
 			/*Un-comment this to see what date is being created, used for debugging can be removed. 
 			console.log(expiryDate);*/
+			
 			if(current.getTime()>expiryDate.getTime()){
-				$(this).find('.show_af').show();
-				$(this).find('.hide_af').hide();
+				if(expireContent == false){
+					$(this).hide();
+				}else{
+					$(this).find('.show_af').show();
+					$(this).find('.hide_af').hide();
+				}
 			}
 		});
 	});
