@@ -6,8 +6,8 @@ A quick thing to create expire content blocks.
 <li>jQuery (recommend latest)</li>
 </ul>
 
-<strong>How it Works:</strong>
-<em>See index.html for working file</em>
+<strong>Demo:</strong>
+http://costellos.github.io/Jquery-Expire-Content/
 
 <strong>Options:</strong>
 <table>
