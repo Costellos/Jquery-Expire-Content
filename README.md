@@ -41,10 +41,4 @@ http://costellos.github.io/Jquery-Expire-Content/
 <td>00:00:00:00</td>
 <td>This defines the time you want the block to expire</td>
 </tr>
-<tr>
-<td>data-content</td>
-<td>Optional</td>
-<td>True</td>
-<td>This switches between hiding the whole block, or showing the content after. By default it shows the content after. Change it to false, and it will hide the whole block.</td>
-</tr>
 </table>
