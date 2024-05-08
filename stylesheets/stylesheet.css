@@ -805,6 +805,11 @@ footer a:hover {
   }
 }
 
+/*Date Expire CSS*/
+.date_expire_action{
+  display: none;
+}
+
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
   .inner {
