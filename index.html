@@ -6,22 +6,26 @@
 </head>
 <body>
 
-<div class="date_expire" data-month="May" data-day="12" data-year="2023" data-time="12:00">
-	<div class="">
-		<ul>
-			<li>Test 1</li>
-			<li>Test 2</li>
-			<li class="date_expire_action" data-action="hide_af">Test 3 hide_af</li>
-			<li class="date_expire_action" data-action="show_af">Test 3 show_af</li>
-			<li class="date_expire_action" data-action="hide_af">Test 4 hide_af</li>
-			<li class="date_expire_action" data-action="hide_af">Test 5 hide_af</li>
-			<li class="date_expire_action" data-action="hide_af">Test 6 hide_af</li>
-			<li class="date_expire_action" data-action="show_af">Test 4 show_af</li>
-			<li class="date_expire_action" data-action="show_af">Test 5 show_af</li>
-			<li class="date_expire_action" data-action="show_af">Test 6 show_af</li>
-		</ul>
-	</div>
-</div>
+  <div class="date_expire" data-month="May" data-day="12" data-year="2023" data-time="12:00" data-hideparent="true">
+    This should be hidden
+  </div>
+
+  <div class="date_expire" data-month="May" data-day="12" data-year="2023" data-time="12:00">
+    <div class="">
+      <ul>
+        <li>Test 1</li>
+        <li>Test 2</li>
+        <li class="date_expire_action" data-action="hide_af">Test 3 hide_af</li>
+        <li class="date_expire_action" data-action="show_af">Test 3 show_af</li>
+        <li class="date_expire_action" data-action="hide_af">Test 4 hide_af</li>
+        <li class="date_expire_action" data-action="hide_af">Test 5 hide_af</li>
+        <li class="date_expire_action" data-action="hide_af">Test 6 hide_af</li>
+        <li class="date_expire_action" data-action="show_af">Test 4 show_af</li>
+        <li class="date_expire_action" data-action="show_af">Test 5 show_af</li>
+        <li class="date_expire_action" data-action="show_af">Test 6 show_af</li>
+      </ul>
+    </div>
+  </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="js/expire_content.js"></script>
