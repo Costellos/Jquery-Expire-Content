@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Expire Content - by Steven Costello - Costello Coding</title>
+	<link rel="stylesheet" type="text/css" href="css/expire_content.css" />
+</head>
+<body>
+    <div class="date_expire" data-type="hide_show" data-month="May" data-day="12" data-year="2024" data-time="12:00">
+        <div class="expire_content_custom_container date_expire_action" data-action="hide_af">
+            <div class="expire_content_custom_inner date_expire" data-type="show_between" data-start="May-8-2024, 00:00" data-end="May-9-2024, 00:00" data-hideparent="true">Before midnight 9th</div>
+            <div class="expire_content_custom_inner date_expire" data-type="show_between" data-start="May-9-2024, 00:00" data-end="May-9-2024, 00:10" data-hideparent="true">Show between midnight and 00:10 9th </div>
+            <div class="expire_content_custom_inner date_expire" data-type="show_between" data-start="May-9-2024, 00:10" data-end="May-12-2024, 00:20" data-hideparent="true">Show on 9th between 00:10 and 00:20</div>
+        </div>
+        <div class="expire_content_custom_container date_expire_action" data-action="show_af">
+            Show af test
+        </div>
+        
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/expire_content.js"></script>
+</body>
+</html>
