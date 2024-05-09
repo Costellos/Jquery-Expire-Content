@@ -34,16 +34,56 @@
         
         <h3><a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h3>
 
+        <div class="date_expire" data-month="May" data-day="12" data-year="2023" data-time="12:00" data-hideparent="true">
+          This should be hidden
+        </div>
+      
+        <div class="date_expire" data-month="May" data-day="12" data-year="2030" data-time="12:00">
+          <div class="">
+            <ul>
+              <li>Test 1</li>
+              <li>Test 2</li>
+              <li class="date_expire_action" data-action="hide_af">Test 3 hide_af</li>
+              <li class="date_expire_action" data-action="show_af">Test 3 show_af</li>
+              <li class="date_expire_action" data-action="hide_af">Test 4 hide_af</li>
+              <li class="date_expire_action" data-action="hide_af">Test 5 hide_af</li>
+              <li class="date_expire_action" data-action="hide_af">Test 6 hide_af</li>
+              <li class="date_expire_action" data-action="show_af">Test 4 show_af</li>
+              <li class="date_expire_action" data-action="show_af">Test 5 show_af</li>
+              <li class="date_expire_action" data-action="show_af">Test 6 show_af</li>
+            </ul>
+          </div>
+        </div>
+
         <h3><a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h3>
         <p>You will need to have jquery loaded to make this work.</p>
         
         <div style="margin:0px 0px 0px 25px;">
 
           <h4><a id="documentation-1" class="anchor" href="#documentation-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1</h4>
-          <p>Create a element and give it the class "date_expire", also set the month, day, and year. You can also set the time, and the content, but these options are optional. When your done it should look like this:</p>
-          
+          <p>Add this to your css, or create a new css file (this is found inside the expire_content.css file)</p>
+
+          <pre class="code_load" data-cssrc="codesnippets/step1_css.html"></pre>
+
+          <h4><a id="documentation-1" class="anchor" href="#documentation-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2</h4>
+          <p>add the js file to the bottom of your webpage (make sure its below/after loading of jquery)</p>
+
+          <pre class="code_load" data-cssrc="codesnippets/step2_js.html"></pre>
+
+          <h4><a id="documentation-1" class="anchor" href="#documentation-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3</h4>
+          <p>Create the element and set you paramaters. Below is a basic example: </p>
+
+          <pre class="code_load" data-cssrc="codesnippets/step3_html.html"></pre>
+
+          <p>Below is a bit more advacned example: </p>
+
+          <pre class="code_load" data-cssrc="codesnippets/step3_adv_html.html"></pre>
+
+
           <h4><a id="documentation-3" class="anchor" href="#documentation-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h4>
           <p>Below are all options available on the parent date_expire item :</p>
+
+          
           
           <table cellpadding="5" cellspacing="0">
             <tr>
@@ -77,27 +117,31 @@
               <td>This defines the time you want the block to expire</td>
             </tr>
             <tr>
-              <td>data-content</td>
+              <td>data-hideparent</td>
               <td>Optional</td>
-              <td>True</td>
-              <td>This switches between hiding the whole block, or showing the content after. By default it shows the content after. Change it to false, and it will hide the whole block.</td>
+              <td>null</td>
+              <td>If this is set, it will ignore any sub items, and hide the whole block after the date. can only be set to true. All other options will fail</td>
             </tr>
-          </table>
-
-          <p>Below are all options available on the sub item date_expire_action item :</p>
+          </table><br />
+          
+          <p>You can have sub items that show or hide. This is useful to change only certain sub object, or to repalce whole sections on a website after a certain date.</p>
+          <p>Below are all options available on the sub item date_expire_action item:</p>
           
           <table cellpadding="5" cellspacing="0">
             <tr>
               <th>Option Code</th>
-              <th>Status</th>
-              <th>Default</th>
+              <th>Action</th>
               <th>Description</th>
             </tr>
             <tr>
               <td>data-action</td>
-              <td>Required</td>
-              <td>null</td>
-              <td>You can set this to hide_af or show_af. "hide_af" will hide that content after the parent expire date. "show_af" will show this content only after the parent expire date.</td>
+              <td>hide_af</td>
+              <td>This will hide eveything inside of this block after the parent date.</td>
+            </tr>
+            <tr>
+              <td>data-action</td>
+              <td>show_af</td>
+              <td>This will show eveything inside of this block after the parent date.</td>
             </tr>
           </table>
         </div>
